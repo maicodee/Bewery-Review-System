@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- External CSS and icon library -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Title for the page -->
+    <title>Brewery | Login & Registration</title>
+</head>
+
+<body>
+    <!-- Main wrapper -->
+    <div class="wrapper">
+        <!-- Navigation Bar -->
+        <nav class="nav">
+            <div class="nav-logo">
+                <!-- Logo -->
+                <p>Brewery</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <!-- Navigation menu content -->
+            </div>
+            <div class="nav-button">
+                <!-- Sign In and Sign Up buttons -->
+                <button class="btn white-btn" id="loginBtn" onclick="login(); redirectToBrewery();">Sign In</button>
+                <button class="btn" id="registerBtn" onclick="register(); redirectToBrewery();">Sign Up</button>
+            </div>
+            <div class="nav-menu-btn">
+                <!-- Menu button for mobile view -->
+                <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+            </div>
+        </nav>
+
+        <!-- Login and Registration Form Container -->
+        <div class="form-box">
+            <!-- Login Container -->
+            <div class="login-container" id="login">
+                <div class="top">
+                    <!-- Switch to the registration form -->
+                    <span>Don't have an account? <a href="#" onclick="register()">Sign Up</a></span>
+                    <header>Login</header>
+                </div>
+                <!-- Username/Email and Password input fields -->
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Username or Email">
+                    <i class="bx bx-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-field" placeholder="Password">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <!-- Submit button -->
+                <div class="input-box">
+                    <input type="submit" class="submit" value="Sign In" onclick="redirectToSearch()">
+                </div>
+            </div>
+
+            <!-- Registration Container -->
+            <div class="register-container" id="register">
+                <div class="top">
+                    <!-- Switch to the login form -->
+                    <span>Have an account? <a href="#" onclick="login()">Login</a></span>
+                    <header>Sign Up</header>
+                </div>
+                <!-- Firstname, Lastname, Email, and Password input fields -->
+                <div class="two-forms">
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Firstname">
+                        <i class="bx bx-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Lastname">
+                        <i class="bx bx-user"></i>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Email">
+                    <i class="bx bx-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-field" placeholder="Password">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <!-- Submit button -->
+                <div class="input-box">
+                    <input type="submit" class="submit" value="Register">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Section -->
+    <script>
+        // Function to toggle responsive navigation menu
+        function myMenuFunction() {
+            var i = document.getElementById("navMenu");
+
+            if (i.className === "nav-menu") {
+                i.className += " responsive";
+            } else {
+                i.className = "nav-menu";
+            }
+        }
+
+        // Elements for handling login and registration forms
+        var a = document.getElementById("loginBtn");
+        var b = document.getElementById("registerBtn");
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+
+        // Function to display login form
+        function login() {
+            x.style.left = "4px";
+            y.style.right = "-520px";
+            a.className += " white-btn";
+            b.className = "btn";
+            x.style.opacity = 1;
+            y.style.opacity = 0;
+        }
+
+        // Function to display registration form
+        function register() {
+            x.style.left = "-510px";
+            y.style.right = "5px";
+            a.className = "btn";
+            b.className += " white-btn";
+            x.style.opacity = 0;
+            y.style.opacity = 1;
+        }
+
+        // Function to redirect to the brewery.html page
+        function redirectToBrewery() {
+            window.location.href = "brewery.html";
+        }
+
+        // Function to redirect to the brewery.html page (alternative)
+        function redirectToBrewery() {
+            window.location.href = "brewery.html";
+        }
+    </script>
+</body>
+
+</html>
